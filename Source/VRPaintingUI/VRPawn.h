@@ -17,5 +17,12 @@ public:
 protected:
 	virtual void BeginPlay() override;
 
+private:
+	UPROPERTY(VisibleAnywhere)
+	class UCameraComponent* VRCamera = nullptr;
+
+	UPROPERTY(VisibleAnywhere)
+	class USceneComponent* VRRoot = nullptr;
+
 public:	
 };

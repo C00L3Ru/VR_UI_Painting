@@ -7,7 +7,10 @@
 AHandController::AHandController()
 {
 	PrimaryActorTick.bCanEverTick = true;
-
+	
+	MotionController = CreateDefaultSubobject<UMotionControllerComponent>(FName("MotionController"));
+	MotionController->SetShowDeviceModel(true);
+	SetRootComponent(MotionController);
 }
 
 void AHandController::BeginPlay()

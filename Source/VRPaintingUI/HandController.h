@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include <MotionControllerComponent.h>
 #include "HandController.generated.h"
 
 UCLASS()
@@ -20,4 +21,9 @@ protected:
 public:	
 	virtual void Tick(float DeltaTime) override;
 
+public:
+	void SetHand(EControllerHand Hand) { MotionController->SetTrackingSource(Hand); }
+
+private:
+	UMotionControllerComponent* MotionController = nullptr;
 };
